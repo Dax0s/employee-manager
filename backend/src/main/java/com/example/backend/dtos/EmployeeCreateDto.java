@@ -12,4 +12,5 @@ public class EmployeeCreateDto {
     private String surname;
     private String email;
     private String company;
+    private boolean admin;
 }
