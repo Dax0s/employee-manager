@@ -2,7 +2,7 @@
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
     <changeSet author="domas" id="1">
         <createTable tableName="employee">
-            <column autoIncrement="true" name="id" startWith="1" type="BIGINT">
+            <column name="id" type="UUID">
                 <constraints nullable="false" primaryKey="true" primaryKeyName="employee_pkey"/>
             </column>
             <column name="name" type="VARCHAR(100)">
@@ -21,6 +21,7 @@
         </createTable>
         <insert schemaName="public"
                 tableName="employee">
+            <column name="id" value="d73425fe-a5f2-45d0-b91d-bdeeda7bef99"/>
             <column name="name" value="Phil"/>
             <column name="surname" value="Johnson"/>
             <column name="company" value="Google"/>
@@ -29,6 +30,7 @@
         </insert>
         <insert schemaName="public"
                 tableName="employee">
+            <column name="id" value="3e0e2d47-734a-488d-b3e1-efcdb47d6ae3"/>
             <column name="name" value="Vlad"/>
             <column name="surname" value="Karakov"/>
             <column name="company" value="Netflix"/>
@@ -36,6 +38,7 @@
         </insert>
         <insert schemaName="public"
                 tableName="employee">
+            <column name="id" value="23dd0891-52f1-4880-9653-7618aa092ec1"/>
             <column name="name" value="Petras"/>
             <column name="surname" value="Petraitis"/>
             <column name="company" value="Google"/>
