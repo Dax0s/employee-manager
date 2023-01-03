@@ -1,0 +1,45 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="domas" id="1">
+        <createTable tableName="employee">
+            <column autoIncrement="true" name="id" startWith="1" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="employee_pkey"/>
+            </column>
+            <column name="name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="surname" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="company" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(100)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="admin" type="boolean" defaultValueBoolean="false"/>
+        </createTable>
+        <insert schemaName="public"
+                tableName="employee">
+            <column name="name" value="Phil"/>
+            <column name="surname" value="Johnson"/>
+            <column name="company" value="Google"/>
+            <column name="email" value="phil.j@gmail.com"/>
+            <column name="admin" value="true"/>
+        </insert>
+        <insert schemaName="public"
+                tableName="employee">
+            <column name="name" value="Vlad"/>
+            <column name="surname" value="Karakov"/>
+            <column name="company" value="Netflix"/>
+            <column name="email" value="vlad@gmail.com"/>
+        </insert>
+        <insert schemaName="public"
+                tableName="employee">
+            <column name="name" value="Petras"/>
+            <column name="surname" value="Petraitis"/>
+            <column name="company" value="Google"/>
+            <column name="email" value="petras@gmail.com"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
